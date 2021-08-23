@@ -1,14 +1,15 @@
 ({
-	
-    doInit : function( componet, event, helper ){
-        //let recordId = component.get("v.recordId");
-        //alert(recordId);
+    
+    doInit : function( component, event, helper ){
         helper.getRecursos( component, event );
     },
     
-    handleChange : function ( cmp, event ){
-        var selectedOptionValue = event.getParam("Value");
-        alert("Option selected with value: '"+ selectedoptionValue +"'");
-    }
+	handleChange: function (component, event) {
+        var selectedOptionValue = event.getParam("value");
+        component.set("v.recursoSelecionado",selectedOptionValue);
+    },
     
+    salvar : function( component, event, helper ){
+        helper.adicionaRecurso( component, event );
+    },
 })
